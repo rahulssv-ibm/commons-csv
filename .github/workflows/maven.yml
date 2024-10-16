@@ -23,7 +23,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04-ppc64le
     continue-on-error: ${{ matrix.experimental }}
     strategy:
       matrix:
@@ -47,6 +47,7 @@ jobs:
       uses: actions/setup-java@b36c23c0d998641eff861008f374ee103c25ac73 # v4.4.0
       with:
         distribution: 'temurin'
+        architecture: ppc64le
         java-version: ${{ matrix.java }}
     - name: Build with Maven
       run: mvn -Ddoclint=all --show-version --batch-mode --no-transfer-progress
