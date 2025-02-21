@@ -23,7 +23,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-22.04-ppc64le
+    runs-on: ubuntu-24.04-ppc64le
     continue-on-error: ${{ matrix.experimental }}
     strategy:
       matrix:
